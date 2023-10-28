@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <title>Find image in pi!</title>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+#clickable-divs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: auto;
+    row-gap: 0;
+    column-gap: 0;
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+.clickdiv {
+    display: flex;
+    height: 50px;
+    width: 50px;
+    border: 1px solid aquamarine;
+    border-radius: 1px;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-size: small;
+}
+    </style>
+    <script src="functionality.js"></script>
+    <script src="big_int_helper.js"></script>
+</head>
+<body>
+    <label for="resolution">Choose a resolution:</label>
+    <select name="resolution" id="resolution">
+        <option value="3">3x3</option>
+        <option value="6">6x6</option>
+        <option value="10">10x10</option>
+        <option value="20">20x20</option>
+        <option value="30">30x30</option>
+        <option value="40">40x40</option>
+    </select>
+    <button id="b1" onclick="update_page()">Update/Reset resolution</button>
+    <div id="clickable-divs">
+
+    </div>
+    <p id="text1"></p>
+    <br>
+    <p id="text2"></p>
+    <button id="b2" onclick="search_for_match()">Search the pi!</button>
+    <div id="result"></div>
+    <script>
+        update_page();
+    </script>
+</body>
